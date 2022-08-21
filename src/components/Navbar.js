@@ -1,9 +1,10 @@
-import logo from './assets/img/logo.webp'
+import logo from '../assets/img/logo.webp'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import CartWidget from './CartWidget';
 
 function NavbarTropical() {
   return (
@@ -32,6 +33,8 @@ function NavbarTropical() {
             <Nav.Link href="#link">Tips de cuidado</Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        {/* acá va el shopping cart */}
+        <CartWidget/>
       </Container>
     </Navbar>
   );
