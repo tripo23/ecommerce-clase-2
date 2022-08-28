@@ -32,9 +32,12 @@ function NavbarTropical() {
             </NavDropdown>
             <Nav.Link href="#link">Tips de cuidado</Nav.Link>
           </Nav>
+          {/* acá va el shopping cart */}
+          <Nav>
+            <CartWidget/>
+          </Nav> 
         </Navbar.Collapse>
-        {/* acá va el shopping cart */}
-        <CartWidget/>
+
       </Container>
     </Navbar>
   );
