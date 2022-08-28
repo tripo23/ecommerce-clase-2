@@ -1,26 +1,35 @@
 import { useState } from "react";
 import Button from 'react-bootstrap/Button';
+import '../assets/styles/css/ItemCount.css';
 
-const ItemCount = ({stock = 5, initial = 1, onAdd}) => {
+
+const ItemCount = (props) => {
+     
+    console.log(props.stock);
     const [count, setCount] = useState(0);
 
     const countPlus = () => {
-        count<stock ? setCount(count+1) : alert("Máximo stock permitido");    
+        count<props.stock ? setCount(count+1) : alert("Máximo stock permitido.");    
     }
 
     const countMinus = () => {
         count>=1 ? setCount(count-1) : setCount(count+0);    
     }
     
+    const add = () => count > 0 ? alert("¡Agregado!") : alert("Seleccioná la cantidad primero.");
 
     return(
-        /* Contador */
+        
         <>
-            <div className="itemCountContainer">
-                <Button variant="outline-secondary" id="button-add"onClick={countMinus}> - </Button>
-                <label className="input-group-text">{count}</label>
-                <Button variant="outline-secondary" id="button-minus" onClick={countPlus}> + </Button>                
+        {/* Increase / Decrease */}
+            <div className="counterContainer">
+                <button className="buttonCounter"onClick={countMinus}> - </button>
+                <label className="labelCounter">{count}</label>
+                <button className="buttonCounter"onClick={countPlus}> + </button>
             </div>
+        {/* Add to shopping list */}
+            <Button variant="outline-success" id="button-add" onClick={add}> Agregar al carrito </Button>
+
         </>
     );
 }
